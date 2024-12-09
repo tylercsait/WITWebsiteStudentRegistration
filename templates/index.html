@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directory</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/web_styles.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('register') }}">Register Student</a>
+        <a href="{{ url_for('view_students') }}">View All Registered Students</a>
+    </nav>
+    <header>
+        <h1>WIT Student Registration</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Available Pages</h2>
+            <ul>
+                <li><a href="{{ url_for('register') }}">Register Student</a></li>
+                <li><a href="{{ url_for('view_students') }}">View All Registered Students</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p></p>
+    </footer>
+</body>
+</html>

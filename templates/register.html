@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register a Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/web_styles.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('register') }}">Register a Student</a>
+        <a href="{{ url_for('view_students') }}">View All Registered Students</a>
+    </nav>
+    <header>
+        <h1>Register a Student</h1>
+    </header>
+    <main>
+        <section class="form-section">
+            <h2>Enter Student Information</h2>
+            <form id="student-form" method="post" action="{{ url_for('register_student') }}">
+                <label for="student_id">Student ID:</label>
+                <input type="text" id="student_id" name="student_id" required>
+
+                <label for="student_name">Student Name:</label>
+                <input type="text" id="student_name" name="student_name" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p></p>
+    </footer>
+</body>
+</html>

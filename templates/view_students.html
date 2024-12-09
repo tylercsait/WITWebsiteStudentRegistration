@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Students</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/web_styles.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('register') }}">Register a Student</a>
+        <a href="{{ url_for('view_students') }}">View All Registered Students</a>
+    </nav>
+    <header>
+        <h1>All Registered Students</h1>
+    </header>
+    <main>
+        <section class="table-section">
+            <h2>Registered Students List</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for student in students %}
+                    <tr>
+                        <td>{{ student.student_id }}</td>
+                        <td>{{ student.student_name }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p></p>
+    </footer>
+</body>
+</html>
