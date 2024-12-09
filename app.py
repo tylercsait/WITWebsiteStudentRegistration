@@ -41,6 +41,13 @@ def register_student():
 
     return redirect(url_for('view_students'))
 
+# Route to handle student deletion
+@app.route('/delete-student/<student_id>', methods=['POST'])
+def delete_student(student_id):
+    with db_utils.mysql_connection() as cursor:
+        db_utils.delete_student_by_id(cursor, student_id)
+    return redirect(url_for('view_students'))
+
 # API endpoint for adding student information
 @app.route('/api/students', methods=['POST'])
 def api_students():
